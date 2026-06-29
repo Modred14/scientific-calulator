@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  colors.xml
-  Dark-theme color palette for the Scientific Calculator.
-  Uses a dark background with bright accent colors for buttons.
+  colors.xml — Theme 2: Deep Ocean Blue
+  Cool deep-sea blues with cyan accents.
 -->
 <resources>
     <!-- ── Primary Palette ─────────────────────────────────── -->
@@ -15,12 +14,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- ── App Background Colors ───────────────────────────── -->
-    <!-- Main screen background: very dark charcoal -->
-    <color name="bg_primary">#1C1C1E</color>
-    <!-- Card / panel backgrounds: slightly lighter -->
-    <color name="bg_card">#2C2C2E</color>
-    <!-- Display background: darkest area -->
-    <color name="bg_display">#111113</color>
+    <color name="bg_primary">#0A0F1E</color>
+    <color name="bg_card">#111827</color>
+    <color name="bg_display">#060B14</color>
 
     <!-- ── Text Colors ─────────────────────────────────────── -->
     <color name="text_primary">#FFFFFFFF</color>
@@ -28,45 +24,40 @@
     <color name="text_hint">#55FFFFFF</color>
 
     <!-- ── Button Colors ───────────────────────────────────── -->
-    <!-- Digit buttons: mid-grey -->
-    <color name="btn_digit">#3A3A3C</color>
-    <color name="btn_digit_pressed">#48484A</color>
+    <color name="btn_digit">#1A2744</color>
+    <color name="btn_digit_pressed">#243358</color>
 
-    <!-- Function buttons (AC, +/-, %): dark grey -->
-    <color name="btn_function">#2C2C2E</color>
-    <color name="btn_function_text">#E0E0E0</color>
+    <color name="btn_function">#111827</color>
+    <color name="btn_function_text">#90CAF9</color>
 
-    <!-- Operator buttons (+, -, ×, ÷): vivid orange -->
-    <color name="btn_operator">#FF9F0A</color>
-    <color name="btn_operator_pressed">#FFB340</color>
+    <color name="btn_operator">#00B4D8</color>
+    <color name="btn_operator_pressed">#48CAE4</color>
 
-    <!-- Equals button: brighter accent -->
-    <color name="btn_equals">#FF9F0A</color>
+    <color name="btn_equals">#00B4D8</color>
 
-    <!-- Scientific buttons: dark teal -->
-    <color name="btn_scientific">#1C3A3A</color>
-    <color name="btn_scientific_text">#4ECDC4</color>
+    <color name="btn_scientific">#0D2137</color>
+    <color name="btn_scientific_text">#00FFFF</color>
 
     <!-- ── Accent Colors ───────────────────────────────────── -->
-    <color name="accent_blue">#0A84FF</color>
-    <color name="accent_green">#30D158</color>
-    <color name="accent_orange">#FF9F0A</color>
-    <color name="accent_teal">#4ECDC4</color>
-    <color name="accent_purple">#BF5AF2</color>
+    <color name="accent_blue">#00B4D8</color>
+    <color name="accent_green">#00F5D4</color>
+    <color name="accent_orange">#F77F00</color>
+    <color name="accent_teal">#00FFFF</color>
+    <color name="accent_purple">#7B2FBE</color>
 
     <!-- ── Utility ─────────────────────────────────────────── -->
-    <color name="error_color">#FF453A</color>
-    <color name="divider">#3A3A3C</color>
+    <color name="error_color">#EF233C</color>
+    <color name="divider">#1A2744</color>
 
     <!-- Material theme colors -->
-    <color name="colorPrimary">#0A84FF</color>
-    <color name="colorPrimaryVariant">#0060DD</color>
+    <color name="colorPrimary">#00B4D8</color>
+    <color name="colorPrimaryVariant">#0077B6</color>
     <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorSecondary">#30D158</color>
+    <color name="colorSecondary">#00F5D4</color>
     <color name="colorOnSecondary">#000000</color>
-    <color name="colorBackground">#1C1C1E</color>
-    <color name="colorSurface">#2C2C2E</color>
+    <color name="colorBackground">#0A0F1E</color>
+    <color name="colorSurface">#111827</color>
     <color name="colorOnSurface">#FFFFFF</color>
-    <color name="colorError">#FF453A</color>
+    <color name="colorError">#EF233C</color>
     <color name="colorOnError">#FFFFFF</color>
 </resources>
