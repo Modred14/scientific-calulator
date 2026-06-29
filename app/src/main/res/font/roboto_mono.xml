@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  roboto_mono.xml
+  Font family descriptor. Placed in res/font/.
+  References the system Roboto Mono font (available as a downloadable font
+  via Google Fonts on API 26+; falls back gracefully on older devices).
+
+  In Android Studio: right-click res → New → Font resource file, OR
+  use Tools → Resource Manager → Font to add the .ttf files directly.
+  For simplicity this descriptor uses monospace as the generic fallback.
+-->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+      To use the actual Roboto Mono font:
+      1. Download RobotoMono-Regular.ttf from https://fonts.google.com/specimen/Roboto+Mono
+      2. Place it in app/src/main/res/font/roboto_mono_regular.ttf
+      3. Uncomment the <font> element below.
+
+    <font
+        android:font="@font/roboto_mono_regular"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        app:font="@font/roboto_mono_regular"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+    -->
+
+</font-family>

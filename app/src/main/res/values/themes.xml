@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  themes.xml
+  Defines the app-wide Material Design 3 dark theme.
+  All Activities inherit this theme via AndroidManifest.xml.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ── Base Application Theme ────────────────────────────────────────────
+         Theme.ScientificCalculator extends Material3 DayNight (auto dark/light).
+         We override key attributes to always use our dark calculator palette.
+    ──────────────────────────────────────────────────────────────────────── -->
+    <style name="Theme.ScientificCalculator" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Primary brand color (blue for buttons / links) -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Background / surface -->
+        <item name="android:colorBackground">@color/bg_primary</item>
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        <!-- Error color -->
+        <item name="colorError">@color/error_color</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Status bar / navigation bar -->
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/bg_primary</item>
+
+        <!-- Ripple color for touch feedback -->
+        <item name="colorControlHighlight">#33FFFFFF</item>
+
+        <!-- Default text color -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+
+    </style>
+
+    <!-- ── Calculator Button Styles ──────────────────────────────────────────
+         Four button variants: Digit, Operator, Function, Equals, Scientific.
+         All share common sizing / shape properties, differing in color.
+    ──────────────────────────────────────────────────────────────────────── -->
+
+    <!-- Base style shared by all calc buttons -->
+    <style name="CalcButtonBase" parent="Widget.Material3.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">68dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_mono</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <!-- Digit buttons: mid-grey background, white text -->
+    <style name="CalcButtonDigit" parent="CalcButtonBase">
+        <item name="android:backgroundTint">@color/btn_digit</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Function buttons (AC, +/-, %, ⌫): slightly darker grey -->
+    <style name="CalcButtonFunction" parent="CalcButtonBase">
+        <item name="android:backgroundTint">@color/btn_function</item>
+        <item name="android:textColor">@color/btn_function_text</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Operator buttons (+, -, ×, ÷): vivid orange -->
+    <style name="CalcButtonOperator" parent="CalcButtonBase">
+        <item name="android:backgroundTint">@color/btn_operator</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <!-- Equals button: same orange, slightly larger text -->
+    <style name="CalcButtonEquals" parent="CalcButtonBase">
+        <item name="android:backgroundTint">@color/btn_equals</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <!-- Scientific function buttons: dark teal background, teal text -->
+    <style name="CalcButtonScientific" parent="CalcButtonBase">
+        <item name="android:layout_height">52dp</item>
+        <item name="android:backgroundTint">@color/btn_scientific</item>
+        <item name="android:textColor">@color/btn_scientific_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+</resources>

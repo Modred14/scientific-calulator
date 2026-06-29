@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- AppBar with Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_primary"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bg_primary"
+            app:title="Scientific Calculator"
+            app:titleTextColor="@color/text_primary"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main scrollable content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- ══════════════════ DISPLAY PANEL ══════════════════ -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/displayPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/bg_display"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:minHeight="140dp"
+                    android:gravity="bottom|end">
+
+                    <!-- Expression line (e.g. "3 + 5 =") -->
+                    <TextView
+                        android:id="@+id/tvExpression"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        android:gravity="end"
+                        android:ellipsize="start"
+                        android:singleLine="true"
+                        android:fontFamily="@font/roboto_mono"
+                        android:paddingBottom="4dp" />
+
+                    <!-- Main numeric display -->
+                    <TextView
+                        android:id="@+id/tvDisplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/text_primary"
+                        android:textSize="48sp"
+                        android:gravity="end"
+                        android:ellipsize="start"
+                        android:singleLine="true"
+                        android:fontFamily="@font/roboto_mono"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ══════════════════ MODE NAVIGATION ROW ══════════════════ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToggleScientific"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="SCI"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/accent_blue"
+                    android:textColor="@color/accent_blue" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMatrix"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="MATRIX"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/accent_green"
+                    android:textColor="@color/accent_green" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStatistics"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="STATS"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/accent_orange"
+                    android:textColor="@color/accent_orange" />
+
+            </LinearLayout>
+
+            <!-- ══════════════════ SCIENTIFIC PANEL (toggled) ══════════════════ -->
+            <LinearLayout
+                android:id="@+id/scientificPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Row 1: DEG/RAD, sin, cos, tan, n! -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDegRad"
+                        style="@style/CalcButtonScientific"
+                        android:text="DEG" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSin"
+                        style="@style/CalcButtonScientific"
+                        android:text="sin" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCos"
+                        style="@style/CalcButtonScientific"
+                        android:text="cos" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTan"
+                        style="@style/CalcButtonScientific"
+                        android:text="tan" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFactorial"
+                        style="@style/CalcButtonScientific"
+                        android:text="n!" />
+                </LinearLayout>
+
+                <!-- Row 2: sinh, cosh, tanh, sqrt, x² -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSinh"
+                        style="@style/CalcButtonScientific"
+                        android:text="sinh" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCosh"
+                        style="@style/CalcButtonScientific"
+                        android:text="cosh" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTanh"
+                        style="@style/CalcButtonScientific"
+                        android:text="tanh" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSqrt"
+                        style="@style/CalcButtonScientific"
+                        android:text="√" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSquare"
+                        style="@style/CalcButtonScientific"
+                        android:text="x²" />
+                </LinearLayout>
+
+                <!-- Row 3: log, ln, eˣ, 10ˣ, x³ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLog"
+                        style="@style/CalcButtonScientific"
+                        android:text="log" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLn"
+                        style="@style/CalcButtonScientific"
+                        android:text="ln" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnExp"
+                        style="@style/CalcButtonScientific"
+                        android:text="eˣ" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTenX"
+                        style="@style/CalcButtonScientific"
+                        android:text="10ˣ" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCube"
+                        style="@style/CalcButtonScientific"
+                        android:text="x³" />
+                </LinearLayout>
+
+                <!-- Row 4: π, e, xʸ, 1/x, |x| -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPi"
+                        style="@style/CalcButtonScientific"
+                        android:text="π" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnE"
+                        style="@style/CalcButtonScientific"
+                        android:text="e" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPower"
+                        style="@style/CalcButtonScientific"
+                        android:text="xʸ" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnReciprocal"
+                        style="@style/CalcButtonScientific"
+                        android:text="1/x" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAbs"
+                        style="@style/CalcButtonScientific"
+                        android:text="|x|" />
+                </LinearLayout>
+
+                <!-- Row 5: nPr, nCr -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNpr"
+                        style="@style/CalcButtonScientific"
+                        android:text="nPr" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNcr"
+                        style="@style/CalcButtonScientific"
+                        android:text="nCr" />
+
+                    <!-- Spacers to fill the row -->
+                    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="3" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- END Scientific Panel -->
+
+            <!-- ══════════════════ BASIC KEYPAD ══════════════════ -->
+
+            <!-- Row: AC, +/-, %, ÷ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnClear"
+                    style="@style/CalcButtonFunction"
+                    android:text="AC" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToggleSign"
+                    style="@style/CalcButtonFunction"
+                    android:text="+/−" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPercent"
+                    style="@style/CalcButtonFunction"
+                    android:text="%" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDivide"
+                    style="@style/CalcButtonOperator"
+                    android:text="÷" />
+            </LinearLayout>
+
+            <!-- Row: 7, 8, 9, × -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn7"
+                    style="@style/CalcButtonDigit"
+                    android:text="7" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn8"
+                    style="@style/CalcButtonDigit"
+                    android:text="8" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn9"
+                    style="@style/CalcButtonDigit"
+                    android:text="9" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMultiply"
+                    style="@style/CalcButtonOperator"
+                    android:text="×" />
+            </LinearLayout>
+
+            <!-- Row: 4, 5, 6, − -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn4"
+                    style="@style/CalcButtonDigit"
+                    android:text="4" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn5"
+                    style="@style/CalcButtonDigit"
+                    android:text="5" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn6"
+                    style="@style/CalcButtonDigit"
+                    android:text="6" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubtract"
+                    style="@style/CalcButtonOperator"
+                    android:text="−" />
+            </LinearLayout>
+
+            <!-- Row: 1, 2, 3, + -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn1"
+                    style="@style/CalcButtonDigit"
+                    android:text="1" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn2"
+                    style="@style/CalcButtonDigit"
+                    android:text="2" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn3"
+                    style="@style/CalcButtonDigit"
+                    android:text="3" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAdd"
+                    style="@style/CalcButtonOperator"
+                    android:text="+" />
+            </LinearLayout>
+
+            <!-- Row: 0 (wide), ., ⌫, = -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn0"
+                    style="@style/CalcButtonDigit"
+                    android:layout_weight="2"
+                    android:text="0" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDecimal"
+                    style="@style/CalcButtonDigit"
+                    android:layout_weight="1"
+                    android:text="." />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDelete"
+                    style="@style/CalcButtonFunction"
+                    android:layout_weight="1"
+                    android:text="⌫" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEquals"
+                    style="@style/CalcButtonEquals"
+                    android:layout_weight="1"
+                    android:text="=" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

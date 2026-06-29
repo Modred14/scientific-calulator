@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scientific Calculator</string>
+    <string name="title_matrix">Matrix Calculator</string>
+    <string name="title_statistics">Statistics Calculator</string>
+    <string name="title_history">Calculation History</string>
+
+    <!-- Button labels -->
+    <string name="btn_clear">AC</string>
+    <string name="btn_delete">⌫</string>
+    <string name="btn_equals">=</string>
+    <string name="btn_decimal">.</string>
+    <string name="btn_toggle_sign">+/−</string>
+    <string name="btn_scientific_toggle">SCI</string>
+    <string name="btn_basic_toggle">BASIC</string>
+    <string name="btn_matrix">MATRIX</string>
+    <string name="btn_stats">STATS</string>
+
+    <!-- Operator labels -->
+    <string name="op_add">+</string>
+    <string name="op_subtract">−</string>
+    <string name="op_multiply">×</string>
+    <string name="op_divide">÷</string>
+
+    <!-- Scientific labels -->
+    <string name="fn_sin">sin</string>
+    <string name="fn_cos">cos</string>
+    <string name="fn_tan">tan</string>
+    <string name="fn_sinh">sinh</string>
+    <string name="fn_cosh">cosh</string>
+    <string name="fn_tanh">tanh</string>
+    <string name="fn_sqrt">√</string>
+    <string name="fn_log">log</string>
+    <string name="fn_ln">ln</string>
+    <string name="fn_factorial">n!</string>
+    <string name="fn_power">xʸ</string>
+    <string name="fn_square">x²</string>
+    <string name="fn_cube">x³</string>
+    <string name="fn_reciprocal">1/x</string>
+    <string name="fn_exp">eˣ</string>
+    <string name="fn_tenx">10ˣ</string>
+    <string name="fn_abs">|x|</string>
+    <string name="fn_pi">π</string>
+    <string name="fn_e">e</string>
+    <string name="fn_npr">nPr</string>
+    <string name="fn_ncr">nCr</string>
+    <string name="fn_deg">DEG</string>
+    <string name="fn_rad">RAD</string>
+
+    <!-- Matrix -->
+    <string name="matrix_size_label">Matrix Size:</string>
+    <string name="matrix_a_label">Matrix A</string>
+    <string name="matrix_b_label">Matrix B</string>
+    <string name="matrix_result_label">Result</string>
+    <string name="op_matrix_add">A + B</string>
+    <string name="op_matrix_subtract">A − B</string>
+    <string name="op_matrix_multiply">A × B</string>
+    <string name="op_determinant">det(A)</string>
+    <string name="btn_calculate">Calculate</string>
+    <string name="btn_clear_fields">Clear</string>
+
+    <!-- Statistics -->
+    <string name="stats_input_hint">e.g.  4, 7, 2, 9, 4, 1, 8</string>
+    <string name="stats_input_hint_sub">Separate values with commas, spaces, or semicolons</string>
+    <string name="stats_sample_data">Sample</string>
+    <string name="label_mean">Mean (μ)</string>
+    <string name="label_median">Median</string>
+    <string name="label_mode">Mode</string>
+    <string name="label_std_dev">Std Dev (σ, pop.)</string>
+    <string name="label_sample_std_dev">Std Dev (s, sample)</string>
+    <string name="label_min">Min</string>
+    <string name="label_max">Max</string>
+    <string name="label_range">Range</string>
+    <string name="label_sum">Sum (Σx)</string>
+    <string name="label_count">Count (n)</string>
+
+    <!-- History -->
+    <string name="history_empty">No calculations yet.\nStart calculating!</string>
+    <string name="history_clear_all">Clear All History</string>
+    <string name="history_cleared">History cleared</string>
+
+    <!-- Errors -->
+    <string name="error_division_by_zero">Error: Division by zero</string>
+    <string name="error_invalid_input">Error: Invalid input</string>
+    <string name="error_math">Math Error</string>
+    <string name="error_syntax">Syntax Error</string>
+
+    <!-- Content descriptions (accessibility) -->
+    <string name="cd_display">Calculator display</string>
+    <string name="cd_expression">Expression display</string>
+</resources>

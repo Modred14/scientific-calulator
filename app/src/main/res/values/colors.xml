@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  colors.xml
+  Dark-theme color palette for the Scientific Calculator.
+  Uses a dark background with bright accent colors for buttons.
+-->
+<resources>
+    <!-- ── Primary Palette ─────────────────────────────────── -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ── App Background Colors ───────────────────────────── -->
+    <!-- Main screen background: very dark charcoal -->
+    <color name="bg_primary">#1C1C1E</color>
+    <!-- Card / panel backgrounds: slightly lighter -->
+    <color name="bg_card">#2C2C2E</color>
+    <!-- Display background: darkest area -->
+    <color name="bg_display">#111113</color>
+
+    <!-- ── Text Colors ─────────────────────────────────────── -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#99FFFFFF</color>
+    <color name="text_hint">#55FFFFFF</color>
+
+    <!-- ── Button Colors ───────────────────────────────────── -->
+    <!-- Digit buttons: mid-grey -->
+    <color name="btn_digit">#3A3A3C</color>
+    <color name="btn_digit_pressed">#48484A</color>
+
+    <!-- Function buttons (AC, +/-, %): dark grey -->
+    <color name="btn_function">#2C2C2E</color>
+    <color name="btn_function_text">#E0E0E0</color>
+
+    <!-- Operator buttons (+, -, ×, ÷): vivid orange -->
+    <color name="btn_operator">#FF9F0A</color>
+    <color name="btn_operator_pressed">#FFB340</color>
+
+    <!-- Equals button: brighter accent -->
+    <color name="btn_equals">#FF9F0A</color>
+
+    <!-- Scientific buttons: dark teal -->
+    <color name="btn_scientific">#1C3A3A</color>
+    <color name="btn_scientific_text">#4ECDC4</color>
+
+    <!-- ── Accent Colors ───────────────────────────────────── -->
+    <color name="accent_blue">#0A84FF</color>
+    <color name="accent_green">#30D158</color>
+    <color name="accent_orange">#FF9F0A</color>
+    <color name="accent_teal">#4ECDC4</color>
+    <color name="accent_purple">#BF5AF2</color>
+
+    <!-- ── Utility ─────────────────────────────────────────── -->
+    <color name="error_color">#FF453A</color>
+    <color name="divider">#3A3A3C</color>
+
+    <!-- Material theme colors -->
+    <color name="colorPrimary">#0A84FF</color>
+    <color name="colorPrimaryVariant">#0060DD</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#30D158</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorBackground">#1C1C1E</color>
+    <color name="colorSurface">#2C2C2E</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    <color name="colorError">#FF453A</color>
+    <color name="colorOnError">#FFFFFF</color>
+</resources>
