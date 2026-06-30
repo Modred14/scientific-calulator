@@ -128,4 +128,4 @@ ScientificCalculator/
 
 ## 📄 License
 
-This project was developed solely for academic purposes as part of a university coursework assignment.**
+This project was developed solely for academic purposes as part of a university coursework assignment.
