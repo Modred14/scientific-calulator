@@ -122,7 +122,7 @@ ScientificCalculator/
 | Course | SEN 104 & SEN 214 |
 | Assignment | Scientific Calculator Mobile App |
 | Student | Favour Omirin |
-| Submission Deadline | June 30th, 2026 |
+| Department | Software Engineering |
 
 ---
 
